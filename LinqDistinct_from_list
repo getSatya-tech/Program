@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Linqdistinct_from_list
+{
+    //Program to distinct numbers from list 
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var numlist = new List<int>() { 1,2,3,4,2,4,5,1,7};
+            var distinctnum = numlist.Distinct().ToList();
+
+            //print distinct result
+            foreach (int i in distinctnum)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
