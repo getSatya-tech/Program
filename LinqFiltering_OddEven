@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LinqFiltering_num_from_list
+{
+    //Filtering numbers using Linq as odd or even
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var LstNum = new List<int>() { 1,2,3,4,5,6,7,8,9};
+            var EvenNum = LstNum.Where(x => x % 2 ==0).ToList();
+            var OddNum = LstNum.Where(x => x % 2 != 0).ToList();
+
+            //print even number
+            Console.WriteLine("Even numbers are as: ");
+            foreach(var e in EvenNum)
+            {
+                Console.WriteLine(e);
+            }
+            //print odd number
+            Console.WriteLine("Odd numbers are as: ");
+            foreach(var o in OddNum)
+            {
+                Console.WriteLine(o);
+            }
+        }
+    }
+}
