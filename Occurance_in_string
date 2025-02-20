@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace occurance_in_string
+{
+    // Program to find the number of occurance of a character in a string using Dictionary
+    internal class Program
+    {
+        private static void GetCharacterOccurance(string name)
+        {
+            Dictionary<char,int> dict = new Dictionary<char, int>();
+            foreach( var x in name)
+            {
+                dict.TryGetValue(x, out var count);
+                dict[x] = count + 1;
+            }
+
+            foreach(var keyvalue in dict)
+            {
+                Console.WriteLine("The occurance of character "+keyvalue.Key + " is " + keyvalue.Value);
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a string: ");
+            string name = (Console.ReadLine()).ToLower();
+
+            // call the function
+            GetCharacterOccurance(name);
+        }
+    }
+}
