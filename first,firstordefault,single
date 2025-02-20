@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace First_firstordefault
+{
+    //Program to understand First(), FirstOrDefault(), Last(), LastOrDefault(), Single(), SingleOrDefault()
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var NumLst1 = new List<int>() { 1,2,3,4,5};
+            var NumLst2 = new List<int>();
+            var NumLst3 = new List<int>() { 2};
+
+            // Use first()
+            var x = NumLst1.First();
+            Console.WriteLine(x);
+
+            //If the list has no element, first() function give an exception as sequence contains no element.
+            //var x2 = NumLst2.First();
+            //Console.WriteLine(x2);
+
+            // Use of firstordefualt()
+
+            var y = NumLst1.FirstOrDefault();
+            Console.WriteLine(y);
+            var y2 = NumLst2.FirstOrDefault();
+            Console.WriteLine(y2);
+
+            //If the list has only one element, in that case we use single() function
+
+            var z = NumLst3.Single();
+            Console.WriteLine(z);
+
+            //In this case, list is empty that's why exception occurs as sequence contains no element.
+            //var z2 = NumLst2.Single();
+            //Console.WriteLine(z2);
+
+            // Use of SingleOrDefault()
+
+            var a = NumLst3.SingleOrDefault();
+            Console.WriteLine(a);
+
+            var a2 = NumLst2.SingleOrDefault();
+            Console.WriteLine(a2);
+
+
+            // Use of Last()
+
+            var b = NumLst1.Last();
+            Console.WriteLine(b);
+
+                //In this case, list is empty that's why exception occurs as sequence contains no element.
+            //var b2 = NumLst2.Last();
+            //Console.WriteLine(b2);
+
+            // Use of LastOrDefault()
+
+            var c = NumLst1.LastOrDefault();
+            Console.WriteLine(c);
+
+            var c1 = NumLst2.LastOrDefault();
+            Console.WriteLine(c1);
+
+
+
+        }
+    }
+}
+
+
+//Note
+//first() : To fetch first element from the list (In case of no element, exception will be there)
+//FirstOrDefault() : To fetch first element from the list (In case of no element, no exception)
+//Last() : To fetch last element from the list (In case of no element, exception will be there)
+//LastOrDefault(): To fetch last element from the list (In case of no element, no exception)
+//Single() : To fetch single record from the list that contains single record only (In case of no element, exception will be there)
+//SingleOrDefault() : To fetch single record from the list that contains single record only (In case of no element, no exception)
